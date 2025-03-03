@@ -1,12 +1,9 @@
 const express = require('express');
 const router = express.Router();
+const { getFaucet, postFaucet } = require("../controllers/faucetController")
 
-router.route('/').get((req, res) => {
-    res.status(200).json({ message: "Faucet ON" })
-});
+router.route('/').get(getFaucet);
 
-router.route('/').post((req, res) => {
-    res.status(200).send({ message: "FaucetTokens Transferred" })
-});
+router.route('/').post(postFaucet);
 
 module.exports = router;
