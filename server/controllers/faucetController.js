@@ -1,5 +1,5 @@
 const Transfer = require("../models/transferModels")
-const cosmosCheck = require("../d/cosmosD")
+const cosmosCheck = require("../domain/cosmos")
 
 //@desc Check if Server is active
 //@route GET /faucet

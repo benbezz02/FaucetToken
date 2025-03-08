@@ -1,5 +1,6 @@
 const mongoose = require("mongoose")
 
+// can only connect to local, issues when connecting to cloud
 const dbURI = 'mongodb://localhost:27017/mydatabase';
 
 const connectDb = async () => {
