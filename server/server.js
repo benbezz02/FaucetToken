@@ -1,4 +1,5 @@
 const express = require("express");
+const cors = require("cors")
 const connectDb = require("./config/dbConnection");
 const { callFaucet } = require("./domain/transfer");
 const dotenv = require("dotenv").config();
@@ -10,6 +11,7 @@ connectDb();
 const app = express();
 const port = process.env.PORT;
 
+app.use(cors());
 app.use(express.json());
 app.use("/faucet", require("./routes/faucetRoutes"));
 
