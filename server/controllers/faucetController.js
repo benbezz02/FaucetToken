@@ -19,7 +19,7 @@ const postFaucet = async (req, res) => {
 
     if (!ETH_address || !COSMOS_address) {
         res.status(400);
-        throw new Error("Body must contain ETH_address and COSMOS_address")
+        return res.status(403).json({ error: "Must contain ETH_address and COSMOS_address" });
     }
 
     const isDelegator = await cosmosCheck.checkIfCosmosDelegator(COSMOS_address);
